@@ -22,7 +22,7 @@ a{color:#598392;-webkit-transition:all .2s;-moz-transition:all .2s;-ms-transitio
 a:hover,button:hover{opacity:.8}
 .top-menu{line-height:1em;text-align:right;position:fixed;top:0;right:0;width:100vw;padding:24px 48px;background:rgba(1,22,30,.8);z-index:10;-webkit-transition:all .2s;-moz-transition:all .2s;-ms-transition:all .2s;-o-transition:all .2s;transition:all .2s}
 .top-menu a{display:inline-block;margin:12px;text-decoration:none;color:#fff}
-.top-menu a.active{color:#8eb773;font-weight:700}
+.top-menu a.active{color:#8eb773}
 .logo{position:absolute;left:48px;top:10px}
 section,footer{width:100%;min-height:100vh;z-index:1}
 #home{color:#fff;display:flex;flex-direction:column;justify-content:center}
@@ -359,10 +359,7 @@ footer p{margin-bottom:24px}
     </div>
 </footer>
 <link href="https://fonts.googleapis.com/css?family=Anton|Noto+Sans:400,400i,700,700i&amp;subset=cyrillic"" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-        crossorigin="anonymous">
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     $(document).ready(function() {
     $('.hamburger').click(function(e) {
@@ -387,6 +384,27 @@ footer p{margin-bottom:24px}
         $('.hamburger').removeClass('active');
         e.stopPropagation();
     });
+});
+
+$(document).ready(function(){
+  $('nav a').click(function(){
+    $('nav a').removeClass("active");
+    $(this).addClass("active");
+});
+});
+
+$(document).ready(function(){
+  $("nav a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+      });
+    }f
+  });
 });
 </script>
 </body>
