@@ -24,12 +24,12 @@ a:hover,button:hover{opacity:.8}
 .top-menu a{display:inline-block;margin:12px;text-decoration:none;color:#fff}
 .top-menu a.active{color:#8eb773}
 .logo{position:absolute;left:48px;top:10px}
-section,footer{width:100%;min-height:100vh;z-index:1}
+section{width:100%;min-height:100vh;z-index:1}
 #home{color:#fff;display:flex;flex-direction:column;justify-content:center}
 #services{background-color:#fff}
-#advantages{background-color:#01161e;color:#598392}
+#advantages,#technologies{background-color:#01161e;color:#598392}
 #pricing{background:#fff;color:#598392}
-footer{background:#01161e;bottom:0;color:#598392;padding-bottom:12px}
+.footer{background:#01161e;bottom:0;color:#598392;padding-bottom:12px}
 .gradient-1:before,.gradient-2:before{content:'';position:absolute;left:0;top:0;width:100%;height:100%}
 .gradient-1:before{background-image:radial-gradient(70vw circle at 30% 50%,rgba(174,195,176,.4),rgba(1,22,30,.6),rgba(18,69,89,.8))}
 .gradient-2:before{background-image:linear-gradient(-20deg,rgba(1,22,30,.8),rgba(18,69,89,.8))}
@@ -43,7 +43,7 @@ h2:before{content:'';position:absolute;height:100%;top:0;left:-24px;border-left:
 h1+h2{font-family:'Anton',sans-serif;font-size:4.5em;white-space:nowrap;margin-top:-120px;color:#fff;opacity:.7}
 h1+h2:before{border-left:3px solid #8eb773}
 h3{font-size:1.6em;line-height:1em;font-weight:700;margin-bottom:13px;color:#124559}
-#advantages h3,#pricing h3{color:#aec3b0}
+#advantages h3,#pricing h3, #technologies h3{color:#aec3b0}
 p{max-width:600px}
 .grid-col-3,.grid-col-4{display:grid;grid-column-gap:72px;margin-top:72px}
 .grid-col-3{grid-template-columns:repeat(3,1fr)}
@@ -64,7 +64,7 @@ p{max-width:600px}
 }
 button{font-family:'Noto Sans',sans-serif;font-size:18px;border:0;background-color:#598392;color:#fff;width:100%;padding:12px}
 #contact-form input,#contact-form textarea{font-family:'Noto Sans',sans-serif;font-size:18px;background:transparent;border:0;border-bottom:1px solid #598392;width:100%;color:#fff;margin:12px 0;padding:12px 12px 0}
-#pricing p,footer p{margin-bottom:72px}
+#pricing p,.footer p{margin-bottom:72px}
 @font-face{font-family:'icomoon';src:url(fonts/icomoon.eot?msjp2);src:url(fonts/icomoon.eot?msjp2#iefix) format("embedded-opentype"),url(fonts/icomoon.ttf?msjp2) format("truetype"),url(fonts/icomoon.woff?msjp2) format("woff"),url(fonts/icomoon.svg?msjp2#icomoon) format("svg");font-weight:400;font-style:normal}
 [class^="icon-"],[class*=" icon-"]{font-family:'icomoon'!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .icon-devices:before{content:"\e900"}
@@ -85,7 +85,7 @@ h3{font-size:1.4em;line-height:1em}
 .grid-col-4 i{font-size:3em;line-height:1em}
 .left-img .frame{grid-column-start:1;grid-column-end:2}
 .right-img .frame{grid-column-start:2;grid-column-end:4;margin-bottom:72px}
-footer .grid-col-3{grid-template-columns:repeat(2,1fr)}
+.footer .grid-col-3{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:767px) {
 .hamburger{position:fixed;top:12px;right:10%;z-index:11}
@@ -101,7 +101,7 @@ h1{font-size:2.2em;line-height:1em;margin-bottom:0}
 h2{font-size:2.4em;line-height:1em}
 h1+h2{font-family:'Noto Sans',sans-serif;font-size:1.36em;line-height:1em;padding-top:60px;margin-top:-50px}
 h1:before{left:-12px}
-.grid-col-3,footer .grid-col-3{grid-template-columns:repeat(1,1fr)}
+.grid-col-3,.footer .grid-col-3{grid-template-columns:repeat(1,1fr)}
 #technologies .grid-col-3{grid-template-columns:repeat(2,1fr)}
 .grid-col-4{grid-template-columns:repeat(1,1fr)}
 .left-img,.right-img{margin:72px 0 0}
@@ -110,7 +110,7 @@ h1:before{left:-12px}
 .left-img .frame{grid-column-start:1;grid-column-end:2;grid-row-start:5;grid-row-end:10}
 .right-img .frame{grid-column-start:1;grid-column-end:2;grid-row-start:1;grid-row-end:2;margin:0}
 .right-img .frame img{position:relative;width:100%}
-footer p{margin-bottom:24px}
+.footer p{margin-bottom:24px}
 }
 .copyright{font-family:'Squares';font-size:9px;margin-top:72px}
 .copyright span{vertical-align: top;margin:0 6px}
@@ -144,7 +144,6 @@ footer p{margin-bottom:24px}
         </g>
         </svg>
     </a>
-    <a class="top-menu-item active" href="#home">Home</a><br/>
     <a href="#services">Services</a><br/>
     <a href="#advantages">Advantages</a><br/>
     <a href="#technologies">Technologies</a><br/>
@@ -229,8 +228,10 @@ footer p{margin-bottom:24px}
             <h3>Progressive Web App</h3>
             <p>It is very important today to propose business solution for all platforms and devices. But it is also very expansive. PWA is a technology that gives your web application a possibility to run on many devices and multiple platforms with one code base. This will save you a lot of money and bit your market competitors by starting on all platforms at once.</p>
         </div>                  
-    </div>
-    <div id="technologies" class="content">
+    </div>       
+</section>
+<section id="technologies">
+    <div class="content">
         <h2>We are Good at Latest Technologies</h2>
         <p>Using modern technologies is very important. It speed up product development, apply best development practices, make application maintainable, make developers happy.</p>
         <div class="grid-col-3">
@@ -298,7 +299,7 @@ footer p{margin-bottom:24px}
                 </ul>
             </div>
         </div>
-    </div>            
+    </div>
 </section>
 <section id="pricing">
     <div class="content">
@@ -310,7 +311,7 @@ footer p{margin-bottom:24px}
         </div>
     </div>
 </section>
-<footer id="contact">
+<section class="footer" id="contact">
     <div class="content">
         <h2>Get In Touch</h2>
         <div class="grid-col-3">
@@ -357,7 +358,7 @@ footer p{margin-bottom:24px}
         </svg>
         <span> All rights reserved</span>
     </div>
-</footer>
+</section>
 <link href="https://fonts.googleapis.com/css?family=Anton|Noto+Sans:400,400i,700,700i&amp;subset=cyrillic"" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -386,12 +387,41 @@ footer p{margin-bottom:24px}
     });
 });
 
-$(document).ready(function(){
-  $('nav a').click(function(){
-    $('nav a').removeClass("active");
-    $(this).addClass("active");
+$(document).ready(function() {
+		$('a[href*=#]').bind('click', function(e) {
+				e.preventDefault(); // prevent hard jump, the default behavior
+
+				var target = $(this).attr("href"); // Set the target as variable
+
+				// perform animated scrolling by getting top-position of target-element and set it as scroll target
+				$('html, body').stop().animate({
+						scrollTop: $(target).offset().top
+				}, 600, function() {
+						location.hash = target; //attach the hash (#jumptarget) to the pageurl
+				});
+
+				return false;
+		});
 });
-});
+
+$(window).scroll(function() {
+		var scrollDistance = $(window).scrollTop();
+
+		// Show/hide menu on scroll
+		//if (scrollDistance >= 850) {
+		//		$('nav').fadeIn("fast");
+		//} else {
+		//		$('nav').fadeOut("fast");
+		//}
+	
+		// Assign active class to nav links while scolling
+		$('section').each(function(i) {
+				if ($(this).position().top <= scrollDistance) {
+						$('nav a.active').removeClass('active');
+						$('nav a').eq(i).addClass('active');
+				}
+		});
+}).scroll();
 
 $(document).ready(function(){
   $("nav a").on('click', function(event) {
